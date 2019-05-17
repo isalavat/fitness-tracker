@@ -11,4 +11,5 @@ public interface FullExerciseService {
 	public FullExercise save(FullExercise fullExercise);
 	public String deleteById(Long id);
 	public List<FullExercise> getAllByTrainingDayId(Long trainDayId);
+	public List<FullExercise> getAllByDateOfTraining(String dateOfTrainStr);
 }

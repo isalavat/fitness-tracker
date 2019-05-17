@@ -1,10 +1,10 @@
 package kg.salavat.finesstracker.saltracker.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.TransactionDefinition;
 
 import kg.salavat.finesstracker.saltracker.domain.FullExercise;
 import kg.salavat.finesstracker.saltracker.repository.FullExerciseRepository;
@@ -39,6 +39,14 @@ public class FullExerciseServiceImpl implements FullExerciseService{
 
 	@Override
 	public List<FullExercise> getAllByTrainingDayId(Long trainDayId) {
-		return fullExerRepo.findByTrainingDay( trainDayRepo.findById(trainDayId).get());
+		return fullExerRepo.findByTrainingDay_id(trainDayId);
 	}
+
+	@Override
+	public List<FullExercise> getAllByDateOfTraining(String dateOfTrainStr) {
+		
+		return fullExerRepo.findByTrainingDay_dateOfTraining(LocalDateTime.parse(dateOfTrainStr));
+	}
+
+	
 }

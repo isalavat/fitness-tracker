@@ -3,6 +3,8 @@ package kg.salavat.finesstracker.saltracker.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +20,15 @@ public class TrainingDayRestController {
 	@GetMapping("/trainingdays/{id}") 
 	public TrainingDay getById(@PathVariable Long id){
 		return trainDayServ.getById(id).get();
+	}
+	
+	@PostMapping("/trainingdays")
+	public TrainingDay save(@RequestBody TrainingDay trainingDay) {
+		return trainDayServ.save(trainingDay);
+	}
+	
+	@GetMapping("/trainingdays/date/{date}") 
+	public TrainingDay getByDate(@PathVariable String date){
+		return trainDayServ.getByDateOdTraining(date);
 	}
 }

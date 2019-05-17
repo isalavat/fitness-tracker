@@ -1,5 +1,6 @@
 package kg.salavat.finesstracker.saltracker.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,13 @@ public class TrainingDayServiceImpl implements TrainingDayService {
 	public String deleteById(Long id) {
 		trainDayRepo.deleteById(id);
 		return "Sucessfully deleted";
+	}
+
+	@Override
+	public TrainingDay getByDateOdTraining(String dateOfTraining) {
+		LocalDateTime locDateTime = LocalDateTime.parse(dateOfTraining);
+		TrainingDay trainDay = trainDayRepo.findByDateOfTraining(locDateTime);
+		return trainDay;
 	}
 
 }

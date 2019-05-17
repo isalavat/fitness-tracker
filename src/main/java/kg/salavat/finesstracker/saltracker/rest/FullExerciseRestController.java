@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kg.salavat.finesstracker.saltracker.domain.FullExercise;
-import kg.salavat.finesstracker.saltracker.repository.TrainingDayRepository;
 import kg.salavat.finesstracker.saltracker.service.FullExerciseService;
 
 @RestController
@@ -20,7 +19,11 @@ public class FullExerciseRestController {
 	
 	@GetMapping("/full-exercises/{trainingDayId}")
 	public List<FullExercise> getAllByTrainingDayId(@PathVariable Long trainingDayId) {
-		
 		return fullExerServ.getAllByTrainingDayId(trainingDayId);
+	}
+	
+	@GetMapping("/full-exercises/date/{dateOfTraining}")
+	public List<FullExercise> getAllByTrainingDayId(@PathVariable String dateOfTraining) {
+		return fullExerServ.getAllByDateOfTraining(dateOfTraining);
 	}
 }
