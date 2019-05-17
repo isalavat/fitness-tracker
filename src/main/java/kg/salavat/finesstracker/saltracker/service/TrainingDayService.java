@@ -10,5 +10,5 @@ public interface TrainingDayService {
 	public List<TrainingDay> getAll();
 	public TrainingDay save(TrainingDay trainDay);
 	public String deleteById(Long id);
-	public TrainingDay getByDateOdTraining(String dateOfTraining);
+	public List<TrainingDay> getByDateOfTraining(String dateOfTraining);
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 import kg.salavat.finesstracker.saltracker.domain.FullExercise;
 
 public interface FullExerciseService {
-	public Optional<FullExercise> getById(Long id);
+	public FullExercise getById(Long id);
 	public List<FullExercise> getAll();
 	public FullExercise save(FullExercise fullExercise);
 	public String deleteById(Long id);

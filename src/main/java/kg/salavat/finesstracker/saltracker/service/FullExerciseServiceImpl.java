@@ -23,8 +23,8 @@ public class FullExerciseServiceImpl implements FullExerciseService{
 	ExerciseRepository exerRepo;
 	
 	@Override
-	public Optional<FullExercise> getById(Long id) {
-		return fullExerRepo.findById(id);
+	public FullExercise getById(Long id) {
+		return fullExerRepo.findById(id).get();
 	}
 
 	@Override

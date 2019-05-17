@@ -37,10 +37,9 @@ public class TrainingDayServiceImpl implements TrainingDayService {
 	}
 
 	@Override
-	public TrainingDay getByDateOdTraining(String dateOfTraining) {
+	public List<TrainingDay> getByDateOfTraining(String dateOfTraining) {
 		LocalDateTime locDateTime = LocalDateTime.parse(dateOfTraining);
-		TrainingDay trainDay = trainDayRepo.findByDateOfTraining(locDateTime);
-		return trainDay;
+		return trainDayRepo.findByDateOfTraining(locDateTime);
 	}
 
 }

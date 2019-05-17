@@ -17,22 +17,23 @@ public class FullExercise {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-						  CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name = "exercise_id")
-	private Exercise exercise;
-	
-	
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-						  CascadeType.DETACH, CascadeType.REFRESH})
-	@JoinColumn(name = "training_day_id")
-	private TrainingDay trainingDay;
-	
 	@Column(name = "weight")
 	private int weight;
 	
 	@Column(name = "amount")
 	private int amount;
+	
+	@ManyToOne(cascade = { CascadeType.MERGE,
+						  CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinColumn(name = "exercise_id")
+	private Exercise exercise;
+	
+	
+	@ManyToOne(cascade = { CascadeType.MERGE,
+						  CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinColumn(name = "training_day_id")
+	private TrainingDay trainingDay;
+	
 	
 	public Long getId() {
 		return id;
@@ -40,18 +41,7 @@ public class FullExercise {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Exercise getExercise() {
-		return exercise;
-	}
-	public void setExercise(Exercise exercise) {
-		this.exercise = exercise;
-	}
-	public TrainingDay getTrainingsDay() {
-		return trainingDay;
-	}
-	public void setTrainingDay(TrainingDay trainingDay) {
-		this.trainingDay = trainingDay;
-	}
+	
 	public int getWeight() {
 		return weight;
 	}
@@ -64,6 +54,20 @@ public class FullExercise {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	
+	public Exercise getExercise() {
+		return exercise;
+	}
+	public void setExercise(Exercise exercise) {
+		this.exercise = exercise;
+	}
+	public TrainingDay getTrainingDay() {
+		return trainingDay;
+	}
+	public void setTrainingDay(TrainingDay trainingDay) {
+		this.trainingDay = trainingDay;
+	}
+	
 	@Override
 	public String toString() {
 		return "FullExercise [id=" + id + ", exercise=" + exercise + ", trainingDay=" + trainingDay + ", weight="

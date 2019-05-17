@@ -25,6 +25,11 @@ public class ExerciseRestController {
 		return exerServ.getById(id).get();
 	}
 	
+	@GetMapping("/exercises")
+	public List<Exercise> getAll() {
+		return exerServ.getAll();
+	}
+	
 	@DeleteMapping("/exercises/{id}")
 	public String deleteById(@PathVariable Long id) {
 		return exerServ.deleteById(id);
@@ -35,8 +40,4 @@ public class ExerciseRestController {
 		return exerServ.save(exercise);
 	}
 	
-	@GetMapping("/exercises")
-	public List<Exercise> getAll() {
-		return exerServ.getAll();
-	}
 }
