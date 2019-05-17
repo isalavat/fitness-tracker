@@ -10,12 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name="full_exercise")
-
 public class FullExercise {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,8 +66,9 @@ public class FullExercise {
 	}
 	@Override
 	public String toString() {
-		return "FullExercise [exercise=" + exercise + ", trainingsDay=" + trainingDay + ", weight=" + weight
-				+ ", amount=" + amount + "]";
+		return "FullExercise [id=" + id + ", exercise=" + exercise + ", trainingDay=" + trainingDay + ", weight="
+				+ weight + ", amount=" + amount + "]";
 	}
+	
 	
 }

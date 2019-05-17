@@ -1,21 +1,16 @@
 package kg.salavat.finesstracker.saltracker.domain;
-
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="training_day")
@@ -23,8 +18,9 @@ public class TrainingDay {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(name="date_of_training")
-	private Date dateOfTraining;
+	private LocalDateTime dateOfTraining;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "trainingDay", cascade = CascadeType.ALL)
@@ -36,10 +32,10 @@ public class TrainingDay {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Date getDateOfTraining() {
+	public LocalDateTime getDateOfTraining() {
 		return dateOfTraining;
 	}
-	public void setDateOfTraining(Date dateOfTraining) {
+	public void setDateOfTraining(LocalDateTime dateOfTraining) {
 		this.dateOfTraining = dateOfTraining;
 	}
 	public List<FullExercise> getFullExercises() {
@@ -50,8 +46,7 @@ public class TrainingDay {
 	}
 	@Override
 	public String toString() {
-		return "TrainingsDay [id=" + id + ", dateOfTraining=" + dateOfTraining + ", fullExercises=" 
+		return "TrainingDay [id=" + id + ", dateOfTraining=" + dateOfTraining + ", fullExercises=" + fullExercises
 				+ "]";
 	}
-	
 }

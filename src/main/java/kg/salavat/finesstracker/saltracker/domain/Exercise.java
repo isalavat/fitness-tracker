@@ -55,7 +55,8 @@ public class Exercise {
 	@Override
 	public String toString() {
 		return "Exercise [id=" + id + ", name=" + name + ", description=" + description + ", videoLink=" + videoLink
-				+ ", articlLink=" + articleLink + "]";
+				+ ", articleLink=" + articleLink + "]";
 	}
+	
 	
 }
