@@ -32,13 +32,13 @@ public class ExerciseServiceImpl implements ExerciseService {
 	@Override
 	public String delete(Exercise exercise) {
 		exerRepo.delete(exercise);
-		return "Sucefully deleted";
+		return "Successfully deleted";
 	}
 	
 	@Override
 	public String deleteById(Long id) {
 		exerRepo.deleteById(id);
-		return "Sucefully deleted";
+		return "Successfully deleted";
 	}
 
 }

@@ -52,7 +52,7 @@ public class FullExerciseServiceImpl implements FullExerciseService{
 	@Override
 	public String deleteById(Long id) {
 		fullExerRepo.deleteById(id);
-		return "Succecfully deleted";
+		return "Successfully deleted";
 	}
 
 	@Override

@@ -7,6 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Describes the strength exercise for muscle gain
+ * @author salavat
+ */
+
 @Entity
 @Table(name="exercise")
 public class Exercise {
@@ -17,10 +22,13 @@ public class Exercise {
 	private String name;
 	@Column(name = "description")
 	private String description;
+	/*
+	 * Links to the tutorials for this exercise
+	 */
 	@Column(name = "video_link")
-	private String videoLink;
+	private String videoLink; 
 	@Column(name = "article_link")
-	private String articleLink;
+	private String articleLink; 
 	
 	public Long getId() {
 		return id;
@@ -57,6 +65,5 @@ public class Exercise {
 		return "Exercise [id=" + id + ", name=" + name + ", description=" + description + ", videoLink=" + videoLink
 				+ ", articleLink=" + articleLink + "]";
 	}
-	
 	
 }

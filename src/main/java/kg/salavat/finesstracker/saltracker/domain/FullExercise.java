@@ -9,7 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+/**
+ * Describes the full exercise, i.e. amount and weight in kilogram, 
+ * and also has information on what date it was made 
+ * @author salavat
+ */
 @Entity
 @Table(name="full_exercise")
 public class FullExercise {

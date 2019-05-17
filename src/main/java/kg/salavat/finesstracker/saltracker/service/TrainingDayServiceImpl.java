@@ -33,7 +33,7 @@ public class TrainingDayServiceImpl implements TrainingDayService {
 	@Override
 	public String deleteById(Long id) {
 		trainDayRepo.deleteById(id);
-		return "Sucessfully deleted";
+		return "Successfully deleted";
 	}
 
 	@Override

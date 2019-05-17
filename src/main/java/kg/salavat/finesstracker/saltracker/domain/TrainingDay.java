@@ -12,6 +12,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * describes the date of the exercise
+ * @author salavat
+ *
+ */
 @Entity
 @Table(name="training_day")
 public class TrainingDay {
